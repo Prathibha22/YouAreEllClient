@@ -81,6 +81,15 @@ public class SimpleShell {
                     continue;
                 }
                 // you need to add a bunch more.
+                if (list.contains("postid")) {
+                    System.out.println("IdtoRegister? ");
+                    String name = console.readLine();
+                    System.out.println("GithubId? ");
+                    String github = console.readLine();
+                    String results = urll.addUser(name,github);
+                    SimpleShell.prettyPrint(results);
+                    continue;
+                }
 
                 //!! command returns the last command in history
                 if (list.get(list.size() - 1).equals("!!")) {
