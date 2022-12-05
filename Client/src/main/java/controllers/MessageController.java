@@ -35,8 +35,18 @@ public class MessageController {
         }
     }
     public ArrayList<Message> getMessagesForId(Id Id) {
-      return null;
-
+        try {
+            URL myUrl=new URL("http://zipcode.rocks:8085/ids/"+ Id.getGithub() +"/messages");
+            return objectMapper.readValue(myUrl, new TypeReference<ArrayList<Message>>(){});
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        } catch (StreamReadException e) {
+            throw new RuntimeException(e);
+        } catch (DatabindException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
     public Message getMessageForSequence(String seq) {
         return null;

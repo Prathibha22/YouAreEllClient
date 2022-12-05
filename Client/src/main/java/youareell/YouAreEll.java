@@ -30,4 +30,6 @@ public class YouAreEll {
     public String get_messages() {return tt.getMessages().toString();}//MakeURLCall("/messages", "GET", "");
 
     public String addUser(String name,String github) {return tt.postId(name, github);}
+    public String getMessagesById(String gitHubId) {return tt.getMessagesToId(gitHubId).toString();
+    }
 }

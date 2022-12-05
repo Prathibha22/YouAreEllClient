@@ -44,10 +44,10 @@ public class IdController {
         // create json from id
         // call server, get json result Or error
         // result json to Id obj
-        ObjectMapper mapper = new ObjectMapper();
+       // ObjectMapper mapper = new ObjectMapper();
         Id createdID;
         try {
-            String jsonID = mapper.writeValueAsString(id);
+            String jsonID = objectMapper.writeValueAsString(id);
             HttpRequest request = HttpRequest.newBuilder().uri(URI.create(idUrl))
                     .POST(HttpRequest.BodyPublishers.ofString(jsonID)).build();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());

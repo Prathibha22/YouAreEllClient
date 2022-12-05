@@ -90,6 +90,14 @@ public class SimpleShell {
                     SimpleShell.prettyPrint(results);
                     continue;
                 }
+                // messages
+                if (list.contains("messagesByID")) {
+                    System.out.println("GithubId? ");
+                    String github=console.readLine();
+                    String results = urll.getMessagesById(github);
+                    SimpleShell.prettyPrint(results);
+                    continue;
+                }
 
                 //!! command returns the last command in history
                 if (list.get(list.size() - 1).equals("!!")) {

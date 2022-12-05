@@ -26,6 +26,8 @@ public class TransactionController {
         tid = idCtrl.postId(tid);
         return ("User Registered "+tid.toString());
     }
-
+    public List<Message> getMessagesToId(String gitHubId) {
+        return msgCtrl.getMessagesForId(new Id("", gitHubId));
+    }
     //public String makecall(String s, String get, String s1) {return null;}
 }
